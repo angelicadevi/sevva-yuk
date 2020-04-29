@@ -15,4 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('opening');
+
+Route::get('/admin', function () {
+    return view('welcomeadmin');
+})->name('openingadmin');
+
+Route::get('/v1/register', 'AdminController@register');
+Route::post('/v1/registerPost', 'AdminController@registerPost');
+
+//Route::get('v1/logout', 'AdminController@logout');
