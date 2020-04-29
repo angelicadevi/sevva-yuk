@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
@@ -46,7 +47,7 @@ class AdminController extends Controller
      */
     public function login(Request $request)
     {
-        return view('login');
+        return view('v1/login');
     }
 
     /**
@@ -60,25 +61,33 @@ class AdminController extends Controller
         $username = $request->username;
         $password = $request->password;
 
-        $data = ModelAdmin::where('username',$username)->first();
+        $data = Admin::select('select fname from admin where username=? and password=?',[$username, $password]);
         if($data){ //apakah email tersebut ada atau tidak
-            if(Hash::check($password,$data->password)){
-                Session::put('username',$data->name);
-                Session::put('login',TRUE);
-                return redirect('/home');
-            }
-            else{
-                return redirect('/login')->with('alert','Password atau Email, Salah !');
-            }
+            //echo"hi";
+            //if(Hash::check($password,$data->password)){
+            //    Session::put('fname',$data->fname);
+            //    Session::put('lname',$data->lname);
+            //    Session::put('username',$data->username);
+            //    Session::put('login',TRUE);
+            return redirect('v1/home');
+            //}
+            //else{
+            //    return redirect('v1/login')->with('alert','Check your username or password!');
+            //}
         }
         else{
-            return redirect('/login')->with('alert','Password atau Email, Salah!');
+            return redirect('v1/login')->with('alert','password!');
         }
     }
 
     public function logout(){
         Session::flush();
         return redirect('/admin')->with('alert','You have been loged out');
+    }
+
+    public function index()
+    {
+        return view('v1/home');
     }
 
 
