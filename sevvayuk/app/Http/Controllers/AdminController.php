@@ -15,29 +15,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
-    {
-        return view('v1/register');
-    }
 
-    public function registerPost(Request $request)
-    {
-        //echo"hi";
-        $this->validate($request, [
-            'fname' => 'required',
-            'lname' => 'required',
-            'username' => 'required|unique:admins',
-            'password' => 'required|min:8'
-        ]);
-        $data = new Admin();
-        $data->fname = $request->fname;
-        $data->lname = $request->lname;
-        $data->username = $request->username;
-        $data->password = $request->password;
-        $data->save();
-        //Admin::create($admin);
-        return redirect('/admin') -> with('success', 'You have been registered');
-    }
 
     /**
      * Store a newly created resource in storage.

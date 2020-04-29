@@ -79,7 +79,6 @@
 
                 <div class="links">
                     <a href="v1/login" class="btn info">Log In</a>
-                    <a href="v1/register" class="btn info">Register</a>
                 </div>
                 <p>Only Auth User that can register an admin</p>
             </div>
