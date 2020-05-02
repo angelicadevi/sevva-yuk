@@ -30,3 +30,10 @@ Route::post('/v1/loginPost', 'AdminController@loginPost');
 //Route::get('v1/logout', 'AdminController@logout');
 
 Route::get('/v1/home', 'AdminController@index')->name('home');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource('/v2', 'ProductController');  
+
+route::post('/v2/cari', 'ProductController@cari');
