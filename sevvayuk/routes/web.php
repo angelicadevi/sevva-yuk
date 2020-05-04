@@ -31,6 +31,9 @@ Route::post('/v1/loginPost', 'AdminController@loginPost');
 
 Route::get('/v1/home', 'AdminController@index')->name('home');
 
+Route::get('register', 'UserController@register');
+Route::post('registerPost', 'UserController@registerPost');
+
 Route::get('/', function () {
     return view('welcome');
 });
