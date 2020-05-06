@@ -31,8 +31,15 @@ Route::post('/v1/loginPost', 'AdminController@loginPost');
 
 Route::get('/v1/home', 'AdminController@index')->name('home');
 
+// START ROUTES FOR RATING
+Route::get('/v1/rating/{product_id}', 'RatingController@formRating');
+Route::post('/v1/rating/{product_id}', 'RatingController@createRating');
+// END ROUTES FOR RATING
+
 Route::get('register', 'UserController@register');
 Route::post('registerPost', 'UserController@registerPost');
 
 Route::resource('/v2', 'ProductController');  
-route::post('/v2/cari', 'ProductController@cari');
+Route::post('/v2/cari', 'ProductController@cari');
+
+
