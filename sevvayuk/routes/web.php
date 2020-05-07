@@ -37,3 +37,5 @@ Route::get('/', function () {
 Route::resource('/v2', 'ProductController');  
 
 route::post('/v2/cari', 'ProductController@cari');
+
+route::get('/v2/create/{id}', 'ProductController@create');

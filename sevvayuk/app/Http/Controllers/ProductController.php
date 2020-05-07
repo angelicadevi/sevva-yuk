@@ -24,9 +24,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-         return view('v2.create');  
+        $product = Product::find($id);
+         return view('v2.create', compact('product'));  
+         
     }
 
     /**

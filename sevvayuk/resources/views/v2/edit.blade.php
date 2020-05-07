@@ -24,15 +24,17 @@
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="nameProduct">Name:</label>
-<input type="text" class="form-control" name="name" value="{{$product->name}}">
+<label for="nameProduct">Nama Barang:</label>
+<input type="hidden" class="form-control" name="nameProduct" value="{{$product->nameProduct}}">
+<p> {{$product->nameProduct}} </p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="price">Price:</label>
-<input type="text" class="form-control" name="price" value="{{$product->price}}">
+<label for="price">Harga:</label>
+<input type="hidden" class="form-control" name="price" value="{{$product->price}}">
+<p> {{$product->price}} </p>
 </div>
 </div>
 </div>
@@ -48,7 +50,7 @@
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
 <label for="rentdate">Tanggal Peminjaman</label>
-<input type="text" class="form-control" name="rentdate" value="{{$product->rentdate}}">
+<input type="date" class="form-control" name="rentdate" value="{{$product->rentdate}}">
 </div>
 </div>
 </div>
@@ -56,7 +58,7 @@
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
 <label for="returndate">Tanggal Pengembalian</label>
-<input type="text" class="form-control" name="returndate" value="{{$product->returndate}}">
+<input type="date" class="form-control" name="returndate" value="{{$product->returndate}}">
 </div>
 </div>
 </div>
