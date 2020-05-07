@@ -31,11 +31,16 @@ Route::post('/v1/loginPost', 'AdminController@loginPost');
 
 Route::get('/v1/home', 'AdminController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// START ROUTES FOR RATING
+Route::get('/v1/rating/{product_id}', 'RatingController@formRating');
+Route::post('/v1/rating/{product_id}', 'RatingController@createRating');
+// END ROUTES FOR RATING
+
+Route::get('register', 'UserController@register');
+Route::post('registerPost', 'UserController@registerPost');
+
+// Input Order 
+
 Route::resource('/v2', 'ProductController');  
-
-route::post('/v2/cari', 'ProductController@cari');
-
-route::get('/v2/create/{id}', 'ProductController@create');
+Route::post('/v2/cari', 'ProductController@cari');
+Route::get('/v2/create/{id}', 'ProductController@create');
