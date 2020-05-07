@@ -39,22 +39,23 @@ class AdminController extends Controller
         $username = $request->username;
         $password = $request->password;
 
-        $data = Admin::select('select fname from admin where username=? and password=?',[$username, $password]);
+        $data = Admin::where('username',$username)->first();
         if($data){ //apakah email tersebut ada atau tidak
             //echo"hi";
-            //if(Hash::check($password,$data->password)){
-            //    Session::put('fname',$data->fname);
-            //    Session::put('lname',$data->lname);
-            //    Session::put('username',$data->username);
-            //    Session::put('login',TRUE);
+            $data = Admin::where('password',$password)->first();
+            if($data){
+                Session::put('fname',$data->fname);
+                Session::put('lname',$data->lname);
+                Session::put('username',$data->username);
+                Session::put('login',TRUE);
             return redirect('v1/home');
-            //}
-            //else{
-            //    return redirect('v1/login')->with('alert','Check your username or password!');
-            //}
+            }
+            else{
+                return redirect('v1/login')->with('alert','Check your username or password!');
+            }
         }
         else{
-            return redirect('v1/login')->with('alert','password!');
+            return redirect('v1/login')->with('alert','Sorry you are not Admin');
         }
     }
 
