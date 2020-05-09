@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\Store;
 
-class ProductController extends Controller
+class StoreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */ 
+     */
     public function index()
     {
-        // return view('v2.create');
-        $product = Product::paginate(4);
-        return view('v2.index', compact('products'));
+        $store = Store::paginate(4);
+        return view('v2.index2', compact('stores'));
     }
 
     /**
@@ -24,11 +23,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $product = Product::find($id);
-         return view('v2.create', compact('product'));  
-         
+        return view('v2.create2');
     }
 
     /**
@@ -39,17 +36,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $this->validate(request(), [
-            'nameProduct' => 'required',
-            'price' => 'required|numeric',
-            'stok' => 'required|numeric',
-            'rentdate' => 'required|numeric',
-            'returndate' => 'required|numeric'
+        $store = $this->validate(request(), [
+        'nameStore' => 'required',
+        'address' => 'required',
+        'phonenumber' => 'required|numeric',
+        'email' => 'required'
         ]);
 
-        Product::create($product);
-        //return back()->with('success', 'Product has been added');
-        return redirect('v2')->with('success','Product has been added');
+        Store ::create($store);
+        //return back()->with('success', 'Store has been added');
+        return redirect('v2')->with('success','Store has been added');
     }
 
     /**
@@ -60,8 +56,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
-        return view('v2.show',compact('product','id'));
+        $store = Store::find($id);
+        return view('v2.show2',compact('store','id'));
     }
 
     /**
@@ -72,8 +68,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('v2.edit',compact('product','id'));
+        $store = Store::find($id);
+        return view('v2.edit2',compact('store','id'));
     }
 
     /**
@@ -96,17 +92,15 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->delete();
-        return redirect('v2')->with('success','Product has been deleted');
+        $store = Store::find($id);
+        $store->delete();
+        return redirect('v2')->with('success','Store has been deleted');
     }
     public function cari(Request $request)
     {
         $cari = $request->keyword;
-        //$products = Product::all()->toArray();
-        //$products = Product::paginate(4);
-        $products = Product:: where('nameProduct','like',"%" .$cari. "%")
+        $stores = Store:: where('nameStore','like',"%" .$cari. "%")
         ->paginate(4);
-        return view('v2.index', compact('products'));
+        return view('v2.index2', compact('stores'));
     }
 }

@@ -44,6 +44,8 @@ Route::post('registerPost', 'UserController@registerPost');
 Route::resource('/v2', 'ProductController');  
 Route::post('/v2/cari', 'ProductController@cari');
 Route::get('/v2/create/{id}', 'ProductController@create');
+ 
+ 
 
 
 
