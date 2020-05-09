@@ -14,8 +14,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $store = Store::paginate(4);
-        return view('v2.index2', compact('stores'));
+        $stores = Store::paginate(4);
+        return view('v3.index', compact('stores'));
     }
 
     /**
@@ -25,7 +25,8 @@ class StoreController extends Controller
      */
     public function create()
     {
-        return view('v2.create2');
+        $store = Store:: all();
+        return view('v3.create', compact('store')); 
     }
 
     /**
@@ -45,7 +46,7 @@ class StoreController extends Controller
 
         Store ::create($store);
         //return back()->with('success', 'Store has been added');
-        return redirect('v2')->with('success','Store has been added');
+        return redirect('v3')->with('success','Store has been added');
     }
 
     /**
@@ -57,7 +58,7 @@ class StoreController extends Controller
     public function show($id)
     {
         $store = Store::find($id);
-        return view('v2.show2',compact('store','id'));
+        return view('v3.show',compact('store','id'));
     }
 
     /**
@@ -69,7 +70,7 @@ class StoreController extends Controller
     public function edit($id)
     {
         $store = Store::find($id);
-        return view('v2.edit2',compact('store','id'));
+        return view('v3.edit',compact('store','id'));
     }
 
     /**
@@ -94,13 +95,13 @@ class StoreController extends Controller
     {
         $store = Store::find($id);
         $store->delete();
-        return redirect('v2')->with('success','Store has been deleted');
+        return redirect('v3')->with('success','Store has been deleted');
     }
     public function cari(Request $request)
     {
         $cari = $request->keyword;
         $stores = Store:: where('nameStore','like',"%" .$cari. "%")
         ->paginate(4);
-        return view('v2.index2', compact('stores'));
+        return view('v3.index', compact('stores'));
     }
 }

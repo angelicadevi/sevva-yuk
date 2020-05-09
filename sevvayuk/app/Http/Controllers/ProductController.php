@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         // return view('v2.create');
-        $product = Product::paginate(4);
+        $products = Product::paginate(4);
         return view('v2.index', compact('products'));
     }
 
@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function create($id)
     {
         $product = Product::find($id);
-         return view('v2.create', compact('product'));  
+        return view('v2.create', compact('product'));  
          
     }
 

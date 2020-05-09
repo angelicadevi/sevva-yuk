@@ -44,6 +44,11 @@ Route::post('registerPost', 'UserController@registerPost');
 Route::resource('/v2', 'ProductController');  
 Route::post('/v2/cari', 'ProductController@cari');
 Route::get('/v2/create/{id}', 'ProductController@create');
+
+// Input Store
+
+Route::resource('/v3', 'StoreController');  
+Route::post('/v3/cari', 'StoreController@cari');
  
  
 

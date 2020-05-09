@@ -1,4 +1,4 @@
-<!-- create2.blade.php -->  
+<!-- create.blade.php -->  
  
 <!DOCTYPE html>  <html>  
     <head>  
@@ -24,12 +24,14 @@
     </div><br />
     @endif
 
-    <form method="post" action="{{url('v2')}}">
+    <form method="post" action="{{url('v3')}}">
         {{csrf_field()}}
     <div class="row">  
     <div class="col-md-4"></div>  
     <div class="form-group col-md-4">  
     <label for="nameStore">Nama Toko : </label> 
+    <input type="hidden" class="form-control" name="nameStore">  
+    <p> {{$store->nameStore}} </p>
     </div>  
     </div>  
     </div>
@@ -37,7 +39,8 @@
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
     <label for="address">Alamat : </label>
-    <input type="text" class="form-control" name="address">
+    <input type="hidden" class="form-control" name="address">  
+    <p> {{$store->address}} </p>
     </div>
     </div>
     </div>
@@ -45,6 +48,8 @@
     <div class="col-md-4"></div>  
     <div class="form-group col-md-4">  
     <label for="phonenumber">Nomor HP : </label>  
+    <input type="hidden" class="form-control" name="phonenumber">  
+    <p> {{$store->phonenumber}} </p>
     </div>  
     </div>  
     </div>  
@@ -52,13 +57,15 @@
     <div class="col-md-4"></div>  
     <div class="form-group col-md-4">  
     <label for="email">Email : </label>  
-    <input type="text" class="form-control" name="email">  
+    <input type="text" class="form-control" name="email"> 
+    <input type="hidden" class="form-control" name="email">  
+    <p> {{$store->email}} </p> 
     </div>  
     </div>  
     </div>  
     <div class="row">  
     <div class="col-md-4"></div>  <div class="form-group col-md-4">  
-    <button  type="submit"  class="btn  btn-success"  style="margin-  left:38px">Toko</button>  
+    <button  type="submit"  class="btn  btn-success"  style="margin-  left:38px">Tambahkan Toko</button>  
     </div>  
     </div>  
      

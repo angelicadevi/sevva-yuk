@@ -1,4 +1,4 @@
-<!-- index2.blade.php -->
+<!-- index.blade.php -->
 <!DOCTYPE html>
 <html>
 <head>
