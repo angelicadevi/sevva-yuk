@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Toko</title>
+<title>Katalog Toko</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -34,16 +34,13 @@
 @foreach($stores as $store)
 <tr>
 <td>{{$store['idStore']}}</td>
+<td>{{$store['nameStore']}}</td>
 <td>{{$store['address']}}</td>
 <td>{{$store['phonenumber']}}</td>
 <td>{{$store['email']}}</td>
+<td><a href="{{action('StoreController@show', $store['idStore'])}}"
+    class="btn btn-success">Detail</a></td>
 </td>
-<form action="{{action('StoreController@destroy',
-$store['idStore'])}}" method="post">
-{{csrf_field()}}
-<input name="_method" type="hidden" value="DELETE">
-<button class="btn btn-danger" type="submit">Hapus</button>
-</form>
 </td>
 </tr>
 @endforeach
