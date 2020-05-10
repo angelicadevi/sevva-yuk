@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Sunting Produk</title>
+<title>Sunting Toko</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-<h2 align="center">Perubahan Produk</h2><br/>
+<h2 align="center">Perubahan Toko</h2><br/>
 @if ($errors->any())
 <div class="alert alert-danger">
 <ul>
@@ -18,54 +18,48 @@
 </ul>
 </div><br />
 @endif
-<form method="post" action="{{action('ProductController@update', $id)}}">
+<form method="post" action="{{action('StoreController@update', $id)}}">
 {{csrf_field()}}
 <input name="_method" type="hidden" value="PATCH">
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="nameProduct">Nama Barang:</label>
-<input type="hidden" class="form-control" name="nameProduct" value="{{$product->nameProduct}}">
-<p> {{$product->nameProduct}} </p>
+<label for="nameStore">Nama Toko:</label>
+<input type="hidden" class="form-control" name="nameStore" value="{{$store->nameStore}}">
+<p> {{$store->nameStore}} </p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="price">Harga:</label>
-<input type="hidden" class="form-control" name="price" value="{{$product->price}}">
-<p> {{$product->price}} </p>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-4"></div>
-<div class="form-group col-md-4">
-<label for="stok">Jumlah Barang</label>
-<input type="text" class="form-control" name="stok" value="{{$product->stok}}">
+<label for="address">Alamat:</label>
+<input type="hidden" class="form-control" name="address" value="{{$store->address}}">
+<p> {{$store->address}} </p>
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="rentdate">Tanggal Peminjaman</label>
-<input type="date" class="form-control" name="rentdate" value="{{$product->rentdate}}">
+<label for="phonenumber">Nomor Telepon:</label>
+<input type="hidden" class="form-control" name="phonenumber" value="{{$store->phonenumber}}">
+<p> {{$store->phonenumber}} </p>
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="returndate">Tanggal Pengembalian</label>
-<input type="date" class="form-control" name="returndate" value="{{$product->returndate}}">
+<label for="email">Email:</label>
+<<input type="hidden" class="form-control" name="email" value="{{$store->email}}">
+<p> {{$store->phonenumber}} </p>
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<button type="submit" class="btn btn-success" style="marginleft:38px">Update Produk</button>
+<button type="submit" class="btn btn-success" style="marginleft:38px">Update Toko</button>
 </div>
 </div>
 </form>
