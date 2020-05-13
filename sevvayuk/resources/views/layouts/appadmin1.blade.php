@@ -34,34 +34,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Transaction</a>
+                        <a class="nav-link" href="login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="register">Register</a>
                     </li>
                 </ul>
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Hello Admin</div>
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-
-                            You are logged in!
-                            <br>
-                            Check on Transaction Menu!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @yield('content')
     </body>
-</html>
+</html

@@ -21,11 +21,11 @@ Route::get('/admin', function () {
     return view('welcomeadmin');
 })->name('openingadmin');
 
-Route::get('/v1/login', 'AdminController@login');
-Route::post('/v1/loginPost', 'AdminController@loginPost');
-Route::get('/v1/logout', 'AdminController@logout');
+Route::get('/admin/login', 'AdminController@login');
+Route::post('/admin/loginPost', 'AdminController@loginPost');
+Route::get('/admin/logout', 'AdminController@logout');
 
-Route::get('/v1/home', 'AdminController@index')->name('home');
+Route::get('/admin/home', 'AdminController@index')->name('home');
 
 // START ROUTES FOR RATING
 Route::get('/v1/rating/{product_id}', 'RatingController@formRating');
@@ -45,6 +45,11 @@ Route::get('/v2/create/{id}', 'ProductController@create');
 
 Route::resource('/v3', 'StoreController');  
 Route::post('/v3/cari', 'StoreController@cari');
+
+//update trans admin
+Route::get('/admin/updateconfirmed/{id}', 'TransactionController@updateconfirmed');
+Route::get('/admin/updateremembered/{id}', 'TransactionController@updateremembered');
+Route::get('/admin/updatecanceled/{id}', 'TransactionController@updatecanceled');
  
  
 
