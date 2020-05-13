@@ -61,9 +61,7 @@ class UserController extends Controller
         $data->username = $request->username;
         $data->password = $request->password;
         $data->save();
-        //User::create($user);
-        $request->session()->flash('status', 'You have been sign up');
-        return redirect('/');
+        return redirect('/')-> with('success', 'You have been registered');
         
     }
 

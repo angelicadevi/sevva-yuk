@@ -21,13 +21,9 @@ Route::get('/admin', function () {
     return view('welcomeadmin');
 })->name('openingadmin');
 
-//Route::get('/v1/register', 'AdminController@register');
-//Route::post('/v1/registerPost', 'AdminController@registerPost');
-
 Route::get('/v1/login', 'AdminController@login');
 Route::post('/v1/loginPost', 'AdminController@loginPost');
-
-//Route::get('v1/logout', 'AdminController@logout');
+Route::get('/v1/logout', 'AdminController@logout');
 
 Route::get('/v1/home', 'AdminController@index')->name('home');
 
