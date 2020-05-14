@@ -21,15 +21,11 @@ Route::get('/admin', function () {
     return view('welcomeadmin');
 })->name('openingadmin');
 
-//Route::get('/v1/register', 'AdminController@register');
-//Route::post('/v1/registerPost', 'AdminController@registerPost');
+Route::get('/admin/login', 'AdminController@login');
+Route::post('/admin/loginPost', 'AdminController@loginPost');
+Route::get('/admin/logout', 'AdminController@logout');
 
-Route::get('/v1/login', 'AdminController@login');
-Route::post('/v1/loginPost', 'AdminController@loginPost');
-
-//Route::get('v1/logout', 'AdminController@logout');
-
-Route::get('/v1/home', 'AdminController@index')->name('home');
+Route::get('/admin/home', 'AdminController@index')->name('home');
 
 // START ROUTES FOR RATING
 Route::get('/v1/rating/{product_id}', 'RatingController@formRating');
@@ -57,6 +53,10 @@ Route::get('/v4/create/{id}', 'OrderController@create');
 Route::post('/v4/cari', 'OrderController@cari');
 Route::get('/v4/review/{id}', 'OrderController@review');
 
+//update trans admin
+Route::get('/admin/updateconfirmed/{id}', 'TransactionController@updateconfirmed');
+Route::get('/admin/updateremembered/{id}', 'TransactionController@updateremembered');
+Route::get('/admin/updatecanceled/{id}', 'TransactionController@updatecanceled');
  
  
 

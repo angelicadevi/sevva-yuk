@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function login(Request $request)
     {
-        return view('v1/login');
+        return view('admin/login');
     }
 
     /**
@@ -48,14 +48,14 @@ class AdminController extends Controller
                 Session::put('lname',$data->lname);
                 Session::put('username',$data->username);
                 Session::put('login',TRUE);
-            return redirect('v1/home');
+            return redirect('admin/home');
             }
             else{
-                return redirect('v1/login')->with('alert','Check your username or password!');
+                return redirect('admin/login')->with('alert','Check your username or password!');
             }
         }
         else{
-            return redirect('v1/login')->with('alert','Sorry you are not Admin');
+            return redirect('admin/login')->with('alert','Sorry you are not Admin');
         }
     }
 
@@ -66,7 +66,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('v1/home');
+        return view('admin/home');
     }
 
 

@@ -48,7 +48,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                             <div class="card">
-                                <div class="card-header">Log In</div>
+                                <div class="card-header">Register</div>
                                     <div class="card-body">
                                     @if ($errors->any()) 
                                         <div class="alert alert-danger"> 
@@ -65,13 +65,22 @@
                                             <p>{{ \Session::get('success') }}</p> 
                                         </div><br /> 
                                     @endif
-                                    @if (\Session::has('alert')) 
-                                        <div class="alert alert-danger"> 
-                                            <p>{{ \Session::get('alert') }}</p> 
-                                        </div><br /> 
-                                    @endif
-                                        <form method="post" action="{{url('/v1/loginPost')}}">
+                                        <form method="post" action="{{url('/admin/registerPost')}}">
                                         {{csrf_field()}}
+                                            <div class="form-group row">
+                                                <label for="fname" class="col-md-4 col-form-label text-md-right">First Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="fname" class="form-control" name="fname">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="lname" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="lname" class="form-control" name="lname">
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                                                 <div class="col-md-6">
@@ -87,7 +96,7 @@
                                             </div>
                                             <div class="col-md-6 offset-md-4">
                                                 <button type="submit" class="btn btn-primary">
-                                                Log In
+                                                Register
                                                 </button>
                                             </div>
                                         </form>

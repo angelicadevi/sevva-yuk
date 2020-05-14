@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="v1/login" class="btn info">Log In</a>
+                    <a href="admin/login" class="btn info">Log In</a>
                 </div>
                 <p>Only Auth User that can register an admin</p>
             </div>
