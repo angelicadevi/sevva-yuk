@@ -49,6 +49,14 @@ Route::get('/v2/create/{id}', 'ProductController@create');
 
 Route::resource('/v3', 'StoreController');  
 Route::post('/v3/cari', 'StoreController@cari');
+
+// Input Order
+
+Route::resource('/v4', 'OrderController');  
+Route::get('/v4/create/{id}', 'OrderController@create');
+Route::post('/v4/cari', 'OrderController@cari');
+Route::get('/v4/review/{id}', 'OrderController@review');
+
  
  
 

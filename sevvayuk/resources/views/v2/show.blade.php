@@ -23,6 +23,24 @@
     </tr>
 
     <tr>
+        <td> Merk </td>
+        <td>:</td>
+        <td>{{ $product->merk }}</td>
+    </tr>
+
+    <tr>
+        <td> Warna </td>
+        <td>:</td>
+        <td>{{ $product->color }}</td>
+    </tr>
+
+    <tr>
+        <td> Tipe </td>
+        <td>:</td>
+        <td>{{ $product->type }}</td>
+    </tr>
+
+    <tr>
         <td> Stock </td>
         <td>:</td>
         <td>{{ $product->stok }}</td>

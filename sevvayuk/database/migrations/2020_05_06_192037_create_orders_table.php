@@ -16,12 +16,13 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {  
             $table->increments('idOrder');
             $table->integer('idProduct');  
-            $table->integer('idStore'); 
+            $table->integer('jumlah'); 
             $table->date('rentdate');
             $table->date('returndate');
-            $table->integer('price');  
+            $table->decimal('totprice');  
             $table->string('ship_to');
             $table->timestamps(); 
+
         });
     }
 

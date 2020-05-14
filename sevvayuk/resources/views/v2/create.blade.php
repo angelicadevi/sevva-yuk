@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>  
     <body>  
-    <div class="container">  <h2>Penambahan Produk</h2><br/>  
+    <div class="container">  <h2>Daftar Produk</h2><br/>  
     
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -38,7 +38,8 @@
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
     <label for="stok">Jumlah Barang:</label>
-    <input type="text" class="form-control" name="stok">
+    <input type="hidden" class="form-control" name="stok">  
+    <p> {{$product->stok}} </p>
     </div>
     </div>
     </div>
@@ -54,22 +55,33 @@
     <div class="row">  
     <div class="col-md-4"></div>  
     <div class="form-group col-md-4">  
-    <label for="rentdate">Tanggal Peminjaman:</label>  
-    <input type="date" class="form-control" name="rentdate">  
+    <label for="merk">Merk:</label>  
+    <input type="hidden" class="form-control" name="merk">  
+    <p> {{$product->merk}} </p> 
     </div>  
     </div>  
     </div>  
     <div class="row">  
     <div class="col-md-4"></div>  
     <div class="form-group col-md-4">  
-    <label for="returndate">Tanggal Pengembalian:</label>  
-    <input type="date" class="form-control" name="returndate">  
+    <label for="color">Warna:</label>  
+    <input type="hidden" class="form-control" name="color">  
+    <p> {{$product->color}} </p>
+    </div>  
+    </div>  
+    </div>  
+    <div class="row">  
+    <div class="col-md-4"></div>  
+    <div class="form-group col-md-4">  
+    <label for="type">Tipe:</label>  
+    <input type="hidden" class="form-control" name="type">  
+    <p> {{$product->type}} </p>
     </div>  
     </div>  
     </div>  
     <div class="row">  
     <div class="col-md-4"></div>  <div class="form-group col-md-4">  
-    <button  type="submit"  class="btn  btn-success"  style="margin-  left:38px">Tambahkan Produk</button>  
+    <button  type="submit"  class="btn  btn-success"  style="margin-  left:38px">Selesai</button>  
     </div>  
     </div>  
      

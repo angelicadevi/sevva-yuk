@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Sunting Produk</title>
+<title>Sunting Order</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-<h2 align="center">Perubahan Produk</h2><br/>
+<h2 align="center">Perubahan Order</h2><br/>
 @if ($errors->any())
 <div class="alert alert-danger">
 <ul>
@@ -24,56 +24,48 @@
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="nameProduct">Nama Barang:</label>
-<input type="hidden" class="form-control" name="nameProduct" value="{{$product->nameProduct}}">
-<p> {{$product->nameProduct}} </p>
+<label for="idProduct">ID Product</label>
+<input type="hidden" class="form-control" name="idProduct" value="{{$order->idProduct}}">
+<p> {{$order->nameProduct}} </p>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="price">Harga:</label>
-<input type="hidden" class="form-control" name="price" value="{{$product->price}}">
-<p> {{$product->price}} </p>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-4"></div>
-<div class="form-group col-md-4">
-<label for="stok">Jumlah Barang</label>
-<input type="text" class="form-control" name="stok" value="{{$product->stok}}">
+<label for="totprice">Total Harga:</label>
+<input type="hidden" class="form-control" name="totprice" value="{{$order->totprice}}">
+<p> {{$order->totprice}} </p>
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="merk">Merk</label>
-<input type="text" class="form-control" name="merk" value="{{$product->merk}}">
+<label for="jumlah">Jumlah:</label>
+<input type="text" class="form-control" name="jumlah" value="{{$order->jumlah}}">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="color">Warna</label>
-<input type="text" class="form-control" name="color" value="{{$product->color}}">
+<label for="rentdate">Tanggal Peminjaman:</label>
+<input type="date" class="form-control" name="rentdate" value="{{$order->rentdate}}">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<label for="type">Tipe</label>
-<input type="text" class="form-control" name="type" value="{{$product->type}}">
+<label for="returndate">Tanggal Pengembalian:</label>
+<input type="date" class="form-control" name="returndate" value="{{$order->returndate}}">
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-md-4"></div>
 <div class="form-group col-md-4">
-<button type="submit" class="btn btn-success" style="marginleft:38px">Update Produk</button>
+<button type="submit" class="btn btn-success" style="marginleft:38px">Update Order</button>
 </div>
 </div>
 </form>

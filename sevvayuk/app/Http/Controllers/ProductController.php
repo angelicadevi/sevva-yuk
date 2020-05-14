@@ -43,8 +43,9 @@ class ProductController extends Controller
             'nameProduct' => 'required',
             'price' => 'required|numeric',
             'stok' => 'required|numeric',
-            'rentdate' => 'required|numeric',
-            'returndate' => 'required|numeric'
+            'merk' => 'required',
+            'color' => 'required',
+            'type' => 'required'
         ]);
 
         Product::create($product);
