@@ -51,7 +51,7 @@ Route::post('/v3/cari', 'StoreController@cari');
 Route::resource('/v4', 'OrderController');  
 Route::get('/v4/create/{id}', 'OrderController@create');
 Route::post('/v4/cari', 'OrderController@cari');
-Route::get('/v4/review/{id}', 'OrderController@review');
+Route::post('/v4/review/{id}', 'OrderController@review');
 
 //update trans admin
 Route::get('/admin/updateconfirmed/{id}', 'TransactionController@updateconfirmed');

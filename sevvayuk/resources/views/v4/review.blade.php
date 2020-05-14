@@ -30,17 +30,17 @@
 <tbody>
 
 <tr>
-<td>{{$order['idOrder']}}</td>
-<td>{{$order['idProduct']}}</td>
-<td align="center">{{$order['jumlah']}}</td>
-<td align="left">{{number_format($order['totprice'],0)}}</td>
-{{$order['rentdate']}}
+<td>{{$order->idOrder}}</td>
+<td>{{$order->idProduct}}</td>
+<td align="center">{{$order->jumlah]}}</td>
+<td align="left">{{number_format($order->totprice,0)}}</td>
+{{$order->rentdate}}
 </td>
 <td>
-{{$order['returndate']}}
+{{$order->returndate}}
 </td>
 <form action="{{action('OrderController@destroy',
-$order['idOrder'])}}" method="post">
+$order->idOrder)}}" method="post">
 {{csrf_field()}}
 <input name="_method" type="hidden" value="DELETE">
 <button class="btn btn-danger" type="submit">Hapus</button>
