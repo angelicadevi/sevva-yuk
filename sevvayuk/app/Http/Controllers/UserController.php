@@ -23,7 +23,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function login()
+    public function login(Request $request)
     {
         return view('login');
     }
@@ -47,13 +47,9 @@ class UserController extends Controller
             }
         }
         else{
-            return redirect('login')->with('alert','Sorry Your password or email are not valid');
-        }
-        else{
          return redirect('/')-> with('success', 'You have successfully logged in');
         }
         
-    }
     }
     /**
      * Store a newly created resource in storage.
