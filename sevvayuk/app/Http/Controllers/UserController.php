@@ -27,10 +27,10 @@ class UserController extends Controller
     {
         return view('login');
     }
-    public function loginPost()
+    public function loginPost(Request $request)
     {
-         $email = $request->string('email')->unique();
-        $password = $request->string('password');
+        $email = $request->email;
+        $password = $request->password;
 
         $data = User::where('email',$email)->first();
         if($data){ //apakah email tersebut ada atau tidak
@@ -45,10 +45,9 @@ class UserController extends Controller
             else{
                 return redirect('login')->with('alert','Check your email or password!');
             }
-        }
         else{
          return redirect('/')-> with('success', 'You have successfully logged in');
-        }
+             }
         
     }
     /**
