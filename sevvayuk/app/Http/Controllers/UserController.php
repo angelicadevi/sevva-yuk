@@ -45,9 +45,10 @@ class UserController extends Controller
             else{
                 return redirect('login')->with('alert','Check your email or password!');
             }
+        }
         else{
-         return redirect('/')-> with('success', 'You have successfully logged in');
-             }
+            return view('home')-> with('success', 'You have successfully logged in');
+        }
         
     }
     /**

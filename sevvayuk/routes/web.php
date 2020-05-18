@@ -38,6 +38,7 @@ Route::post('registerPost', 'UserController@registerPost');
 Route::get('login', 'UserController@login');
 Route::post('loginPost', 'UserController@loginPost');
 
+
 // Input Order 
 
 Route::resource('/v2', 'ProductController');  
