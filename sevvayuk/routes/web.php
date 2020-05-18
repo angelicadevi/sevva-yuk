@@ -35,6 +35,9 @@ Route::post('/v1/rating/{product_id}', 'RatingController@createRating');
 Route::get('register', 'UserController@register');
 Route::post('registerPost', 'UserController@registerPost');
 
+Route::get('login', 'UserController@login');
+Route::post('loginPost', 'UserController@loginPost');
+
 // Input Order 
 
 Route::resource('/v2', 'ProductController');  
