@@ -48,7 +48,7 @@
                                 <input class="input--style-3" type="text" placeholder="Email" name="email">
                             </div>
                             <div class="input-group">
-                                <input class="input--style-3" type="text" placeholder="Password" name="password">
+                                <input class="input--style-3" type="password" placeholder="Password" name="password">
                             </div>
                             <div class="p-t-10">
                                 <button class="btn btn--pill btn--green" type="submit" class="button" style="marginleft:38px; font-size: 20px;">Log In</button> 
