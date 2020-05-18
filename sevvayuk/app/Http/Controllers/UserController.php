@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function login()
     {
-        return view('user/login');
+        return view('login');
     }
     public function loginPost()
     {
@@ -39,17 +39,20 @@ class UserController extends Controller
             if($data){
                 Session::put('email',$data->email);
                 Session::put('password',$data->password);
-                Session::put('username',$data->username);
                 Session::put('login',TRUE);
-            return redirect('user/home');
+            return redirect('home');
             }
             else{
-                return redirect('user/login')->with('alert','Check your username or password!');
+                return redirect('login')->with('alert','Check your email or password!');
             }
         }
         else{
-            return redirect('user/login')->with('alert','Sorry Your password or email are not valid');
+            return redirect('login')->with('alert','Sorry Your password or email are not valid');
         }
+        else{
+         return redirect('/')-> with('success', 'You have successfully logged in');
+        }
+        
     }
     }
     /**
